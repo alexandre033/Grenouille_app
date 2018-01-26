@@ -2,6 +2,7 @@
 import React, {Component} from 'react'
 import {View, Text, Image} from 'react-native'
 import styles from '../assets/globalStyles'
+import {Icon} from 'react-native-elements'
 
 
 export default class Conditions extends Component{
@@ -16,6 +17,9 @@ export default class Conditions extends Component{
                         <Text style={styles.conditionsHeaderItemsText}>
                         BORDEAUX
                         </Text>
+                        <Text style={{fontSize:12, color:"white"}}>
+                        Mon 24 Jan
+                        </Text>
                         
                     </View>
                 </View>
@@ -23,11 +27,13 @@ export default class Conditions extends Component{
                     <Text style={styles.conditionsTempItem}>14°</Text>
                 </View>
                 <View style={styles.conditionsMeasure}>
-                    <View>
-                        <Text style={styles.conditionsMeasureItems}>Wind : 96</Text>
+                    <View style={styles.conditionsMeasureContainer}>
+                        <Icon name="water" type='material-community' color="white"/> 
+                        <Text style={styles.conditionsMeasureItems}> 96%</Text>
                     </View>
-                    <View>
-                        <Text style={styles.conditionsMeasureItems}>Hum : 70%</Text>
+                    <View style={styles.conditionsMeasureContainer}>
+                        <Icon name="weather-windy" type='material-community' color="white"/> 
+                        <Text style={styles.conditionsMeasureItems}> 70 km/h</Text>
                     </View>
                 </View>
             </View>

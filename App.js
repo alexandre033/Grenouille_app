@@ -1,40 +1,35 @@
 import React, {Component} from 'react'
-import {View, Text, StatusBar} from 'react-native'
-import styles from './assets/globalStyles'
-import Conditions from './components/conditions'
-import Forecast from './components/forecast'
+import {View, StatusBar, Text} from 'react-native'
+import MainScreen from './components/mainScreen'
+import {UpdateCity} from './components/updateCity'
+import SideMenu from 'react-native-side-menu'
 import Menu from './components/menu'
-import UpdateCity from './components/updateCity'
-import { DrawerNavigator } from 'react-navigation';
-
-
-export const MainScreen = () => {
-        <Menu/>
-        <Conditions/>
-        <Forecast/>
-}
-
-const RootDrawer = DrawerNavigator({
-  MainScreen: {
-    screen: MainScreen,
-  },
-  Profile: {
-    screen: UpdateCity,
-  },
-});
-
 
 export default class App extends Component{
+  constructor(props){
+    super(props)
+    this.state = {isOpen : false}
+    this.getSideMenu = this.getSideMenu.bind(this)
+  }
+  getSideMenu(){
+    this.setState({isOpen : true})
+  }
+
   render(){
     return(
-      <View style={styles.container}>
+      <SideMenu 
+      menu={UpdateCity}
+      isOpen = {this.state.isOpen}
+      >
        <StatusBar
         hidden={true}
         />
-        <RootDrawer />
-      </View>
+        <MainScreen isOpen={this.getSideMenu}/>
+      </SideMenu>
+
     )
   }
 }
+
 
 

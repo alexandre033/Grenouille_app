@@ -1,14 +1,17 @@
 import React, {Component} from 'react'
-import {View, Text, Image} from 'react-native'
+import {View, Image} from 'react-native'
+import { Icon } from 'react-native-elements'
 import styles from '../assets/globalStyles'
-import { DrawerNavigator } from 'react-navigation';
 
-export default class Menu extends Component{
+//USE THE getSideMenu function from App.js Throught the props openMenu
+export default class Menu extends Component {
+
     render(){
         return(
-            <View style={styles.menu}>
-                <Image source = {require('../assets/icons/plus.png')}/>
+            <View style={styles.menuContainer}>
+                <Icon name="add-circle-outline" type='material-icons' color="white" onPress={() => this.props.openMenu()}/>
             </View>
+            
         )
     }
 }

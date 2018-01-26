@@ -1,25 +1,21 @@
 import {StyleSheet} from 'react-native'
 
-export const BACKGROUNDCOLOR = "#311B92"
-export const BACKGROUNDCOLORSECOND = "#4527A0"
-export const BACKGROUNDCOLORTHIRD = "#512DA8"
-export const BACKGROUNDCOLORFOURTH = "#5E35B1"
+export const BACKGROUNDCOLOR = "#5C114A"
+export const BACKGROUNDCOLORSECOND = "#5b1e4c"
+export const BACKGROUNDCOLORTHIRD = "#663559"
+export const BACKGROUNDCOLORFOURTH = "#774c6d"
 
 export default StyleSheet.create({
     container : {
         flex:1,
         backgroundColor : BACKGROUNDCOLOR
     },
-    //MENU
-    menu:{
-        margin:20,
-        alignItems : "flex-end",
-    },
+
     //HEADER OF THE APP
     conditionsContainer : {
         flex:3,
         //backgroundColor:"orange",
-        marginTop : 10,
+        marginTop : 0,
     },
     conditionsHeader :{
         //backgroundColor:"green",
@@ -40,16 +36,20 @@ export default StyleSheet.create({
         justifyContent:"center"
     },
     conditionsTempItem :{
-        fontSize :200,
+        fontSize :175,
         color: "white",
     },
     conditionsMeasure :{
         flexDirection :"row",
-        justifyContent:"space-around"
+        justifyContent:"space-around",
+        alignItems:"flex-start"
+    },
+    conditionsMeasureContainer:{
+        flexDirection:"row"
     },
     conditionsMeasureItems :{
         color:"white",
-        fontSize:20
+        fontSize:15
     },
 
 
@@ -75,7 +75,27 @@ export default StyleSheet.create({
     },
     forecastItems3 :{
         backgroundColor:BACKGROUNDCOLOR
-    }
+    },
 
+    //UPDATE CITY
+    updateCityContainer : {
+        flex:1,
+        backgroundColor:"#1C1F24",
+        padding:20
+    },
+    updateCityIcon:{
+        justifyContent:"flex-start"
+    },
+    updateCityText :{
+        color:"white",
+        fontSize:15
+    },
+
+    //MENU CONTAINER
+    menuContainer :{
+        alignItems:"flex-end",
+        padding :10
+        //alignContent:"baseline"
+    }
 
 })
